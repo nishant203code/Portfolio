@@ -1,5 +1,9 @@
 # Nishant Porwal
 
+## Local development
+
+Use Node.js 24.x. The `.nvmrc` file selects that major version with `nvm use`. Then run `npm install` and `npm run dev`. Run `npm run build` to create a production build. npm is configured to reject other Node versions early. The production build uses webpack because the current Tailwind/Turbopack combination fails while loading an ES module.
+
 I'm a Computer Science student at NIT Delhi, graduating in 2027. I build real-time applications, backend systems, and applied machine learning tools. This portfolio brings together my projects, research, and experience.
 
 [Resume](public/resume.pdf) · [GitHub](https://github.com/nishant203code) · [LinkedIn](https://www.linkedin.com/in/nishantporwal203/) · [Email](mailto:nishantporwal203@gmail.com)
