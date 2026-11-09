@@ -30,8 +30,8 @@ export const projects: Project[] = [
     stack: ["React", "TypeScript", "Node.js", "WebRTC", "WebSockets", "MongoDB", "Docker"],
     repo: "https://github.com/nishant203code/PeerLink",
     revision: "c64ba8e3738267bc108731b76028b727e5abde75",
-    screenshot: { src: "/projects/peerlink-dashboard.jpg", width: 1920, height: 970, alt: "PeerLink dashboard with contact search and video-call controls", caption: "PeerLink dashboard · screenshot from the project repository" },
-    gallery: { src: "/projects/peerlink-home.jpg", width: 1920, height: 967, alt: "PeerLink landing page introducing its video communication features", caption: "PeerLink landing page · repository screenshot" },
+    screenshot: { src: "/projects/peerlink-dashboard.jpg", width: 1920, height: 970, alt: "PeerLink dashboard with contact search and video-call controls", caption: "PeerLink dashboard" },
+    gallery: { src: "/projects/peerlink-home.jpg", width: 1920, height: 967, alt: "PeerLink landing page introducing its video communication features", caption: "PeerLink home page" },
     flow: [
       { title: "React client", detail: "Contacts, call state & local media" },
       { title: "WebSocket signaling", detail: "SDP offers, answers & ICE candidates" },
@@ -132,8 +132,8 @@ export const projects: Project[] = [
     stack: ["React", "TypeScript", "TanStack Start", "Supabase", "PostgreSQL", "Chrome Extension"],
     repo: "https://github.com/nishant203code/CodeTracker",
     revision: "b81ce83e81a6b1c295db066820d844ea58ceaa49",
-    screenshot: { src: "/projects/codetracker-dashboard.png", width: 1906, height: 905, alt: "CodeTracker dashboard showing a problem log, activity heatmap, and topic breakdown", caption: "CodeTracker dashboard · screenshot from the project repository" },
-    gallery: { src: "/projects/codetracker-revise.png", width: 1895, height: 904, alt: "CodeTracker revision interface for selecting and reviewing practice problems", caption: "Revision workflow · repository screenshot" },
+    screenshot: { src: "/projects/codetracker-dashboard.png", width: 1906, height: 905, alt: "CodeTracker dashboard showing a problem log, activity heatmap, and topic breakdown", caption: "CodeTracker dashboard" },
+    gallery: { src: "/projects/codetracker-revise.png", width: 1895, height: 904, alt: "CodeTracker revision interface for selecting and reviewing practice problems", caption: "CodeTracker revision view" },
     flow: [
       { title: "Capture", detail: "Web form or browser extension" },
       { title: "Problem log", detail: "Identity, status & review history" },
