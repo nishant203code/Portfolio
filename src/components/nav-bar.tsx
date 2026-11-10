@@ -42,7 +42,7 @@ export function NavBar() {
           {navigation.map(({ label, href }) => (
             <Link key={label} href={pathname === "/" ? href.slice(1) : href} onClick={() => setOpen(false)}>{label}</Link>
           ))}
-          <a href="/resume.pdf" className="button button-small glass" target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
+          <a href={profile.resumeUrl} className="button button-small glass" target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
             Resume <ArrowUpRight size={14} aria-hidden="true" /><span className="sr-only"> (PDF, opens in a new tab)</span>
           </a>
         </nav>

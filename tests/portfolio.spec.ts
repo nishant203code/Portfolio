@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { projects } from "../src/content/projects";
+import { profile } from "../src/content/profile";
 
 for (const theme of ["dark", "light"] as const) {
   for (const width of [320, 360, 768, 1440]) {
@@ -74,10 +75,11 @@ test("touch navigation and case-study links work without hover", async ({ browse
 });
 
 test("all routes, repository links, and resume are real destinations", async ({ page, request }) => {
-  const response = await request.get("/resume.pdf");
-  expect(response.status()).toBe(200);
-  expect(response.headers()["content-type"]).toContain("application/pdf");
-  expect((await response.body()).subarray(0, 4).toString()).toBe("%PDF");
+  await page.goto("/");
+  await expect(page.getByRole("link", { name: /View resume/ }))
+    .toHaveAttribute("href", profile.resumeUrl);
+  await expect(page.getByRole("navigation").getByRole("link", { name: /Resume/ }))
+    .toHaveAttribute("href", profile.resumeUrl);
   await page.goto("/projects");
   await expect(page.locator(".project-card")).toHaveCount(6);
   for (const project of projects) {

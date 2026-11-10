@@ -14,7 +14,7 @@ export function Hero() {
       <div className="hero-introduction"><p>{profile.introduction}</p><p>{profile.education}</p></div>
       <div className="hero-actions">
         <a href="#work" className="button button-primary">View projects <ArrowDown size={19} aria-hidden="true" /></a>
-        <a href="/resume.pdf" className="button glass" target="_blank" rel="noreferrer">View resume <ArrowUpRight size={18} aria-hidden="true" /><span className="sr-only"> (PDF, opens in a new tab)</span></a>
+        <a href={profile.resumeUrl} className="button glass" target="_blank" rel="noreferrer">View resume <ArrowUpRight size={18} aria-hidden="true" /><span className="sr-only"> (PDF, opens in a new tab)</span></a>
       </div>
     </section>
   );

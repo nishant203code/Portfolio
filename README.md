@@ -6,7 +6,7 @@ Use Node.js 24.x. The `.nvmrc` file selects that major version with `nvm use`. T
 
 I'm a Computer Science student at NIT Delhi, graduating in 2027. I build real-time applications, backend systems, and applied machine learning tools. This portfolio brings together my projects, research, and experience.
 
-[Resume](public/resume.pdf) · [GitHub](https://github.com/nishant203code) · [LinkedIn](https://www.linkedin.com/in/nishantporwal203/) · [Email](mailto:nishantporwal203@gmail.com)
+[Resume](https://drive.google.com/file/d/1SkFmQX3bo4iyR0NWr1x7IlfQAKm05A3s/view?usp=sharing) · [GitHub](https://github.com/nishant203code) · [LinkedIn](https://www.linkedin.com/in/nishantporwal203/) · [Email](mailto:nishantporwal203@gmail.com)
 
 ## Experience
 
@@ -44,4 +44,4 @@ At NIT Delhi, I also contribute as:
 - Editorial Board Member, institutional newsletter.
 - Organizing Committee Member, ICCSDT International Conference.
 
-You can find more about my background in my [resume](public/resume.pdf), or reach me at [nishantporwal203@gmail.com](mailto:nishantporwal203@gmail.com).
+You can find more about my background in my [resume](https://drive.google.com/file/d/1SkFmQX3bo4iyR0NWr1x7IlfQAKm05A3s/view?usp=sharing) or reach me at [nishantporwal203@gmail.com](mailto:nishantporwal203@gmail.com).

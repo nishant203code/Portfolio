@@ -2,6 +2,7 @@ export const profile = {
   name: "Nishant Porwal",
   role: "Software Developer",
   email: "nishantporwal203@gmail.com",
+  resumeUrl:"https://drive.google.com/file/d/1SkFmQX3bo4iyR0NWr1x7IlfQAKm05A3s/view?usp=sharing",
   github: "https://github.com/nishant203code",
   linkedin: "https://www.linkedin.com/in/nishantporwal203/",
   introduction: "I build real-time applications, backend systems, and applied AI tools.",
