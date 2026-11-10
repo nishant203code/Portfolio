@@ -109,6 +109,7 @@ p + p { margin-top: 16px; }
 figcaption { color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 10px; }
 .project-card-bottom { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; padding: 24px 28px 22px; margin-top: auto; }
 .project-card-bottom .text-link { white-space: nowrap; min-height: 28px; font-size: 13px; }
+.project-card-links { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
 .architecture { padding: 22px; background: var(--inset); border: 1px solid var(--border); border-radius: 14px; }
 .architecture .visual-label { margin: 0 0 22px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; }
 .flow { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }

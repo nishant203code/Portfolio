@@ -26,7 +26,15 @@ export default async function CaseStudy({ params }: Props) {
   return (
     <article className="case-study">
       <Link href="/projects" className="text-link back-link"><ArrowLeft size={17} aria-hidden="true" /> All projects</Link>
-      <header className="page-heading case-heading"><p className="eyebrow">{project.category}</p><h1>{project.title}</h1><p>{project.summary}</p><div className="case-meta"><span>{project.role}</span><a className="text-link" href={project.repo} target="_blank" rel="noreferrer"><CodeXml size={17} aria-hidden="true" /> GitHub <ArrowUpRight size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a></div><ul className="tags" aria-label="Technology stack">{project.stack.map((tech) => <li key={tech}>{tech}</li>)}</ul></header>
+      <header className="page-heading case-heading">
+        <p className="eyebrow">{project.category}</p><h1>{project.title}</h1><p>{project.summary}</p>
+        <div className="case-meta">
+          <span>{project.role}</span>
+          {project.liveUrl && <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">Live Site <ArrowUpRight size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>}
+          <a className="text-link" href={project.repo} target="_blank" rel="noreferrer"><CodeXml size={17} aria-hidden="true" /> GitHub <ArrowUpRight size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
+        </div>
+        <ul className="tags" aria-label="Technology stack">{project.stack.map((tech) => <li key={tech}>{tech}</li>)}</ul>
+      </header>
       <div className="surface case-visual"><ProjectVisual project={project} large /></div>
       <div className="case-body">
         <section className="case-section"><span className="section-number">01 / Context</span><div><h2>The problem & constraints</h2><p>{project.problem}</p></div></section>

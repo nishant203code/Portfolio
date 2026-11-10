@@ -6,6 +6,7 @@ export type Project = {
   role: string;
   stack: string[];
   repo: string;
+  liveUrl?: string;
   screenshot?: { src: string; width: number; height: number; alt: string; caption: string };
   gallery?: { src: string; width: number; height: number; alt: string; caption: string };
   flow: { title: string; detail: string }[];
@@ -29,6 +30,7 @@ export const projects: Project[] = [
     role: "Full-stack development",
     stack: ["React", "TypeScript", "Node.js", "WebRTC", "WebSockets", "MongoDB", "Docker"],
     repo: "https://github.com/nishant203code/PeerLink",
+    liveUrl: "https://peerlink-7ya7.onrender.com/",
     revision: "c64ba8e3738267bc108731b76028b727e5abde75",
     screenshot: { src: "/projects/peerlink-dashboard.jpg", width: 1920, height: 970, alt: "PeerLink dashboard with contact search and video-call controls", caption: "PeerLink dashboard" },
     gallery: { src: "/projects/peerlink-home.jpg", width: 1920, height: 967, alt: "PeerLink landing page introducing its video communication features", caption: "PeerLink home page" },
@@ -48,7 +50,7 @@ export const projects: Project[] = [
       { title: "Buffer early ICE candidates", detail: "Candidates can arrive before the peer connection is ready. A client-side buffer defers their application until the connection can accept them." },
     ],
     challenges: "Call teardown crosses sockets, peer connections, and media tracks. The client closes peer connections and stops tracks, while the server removes socket mappings on disconnect. Reconnection and overlapping socket lifetimes need particular care: an old socket closing can affect a newer mapping.",
-    results: "The application connects contact discovery and authentication with WebSocket signaling and browser-to-browser audio and video.",
+    results: "PeerLink is deployed and available online, connecting contact discovery and authentication with WebSocket signaling and browser-to-browser audio and video.",
     limitations: "The server keeps connection mappings in memory and supports one mapped socket per user. Production scaling, TURN coverage, malformed-message handling, and reconnection behavior require further testing. Latency and concurrency have not been benchmarked.",
     nextSteps: "Test calls across restrictive networks and add explicit session ownership checks around reconnect and cleanup.",
     sourceFiles: [

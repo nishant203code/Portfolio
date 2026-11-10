@@ -14,7 +14,10 @@ export function ProjectCard({ project }: { project: Project }) {
       <ProjectVisual project={project} />
       <div className="project-card-bottom">
         <ul className="tags" aria-label="Technologies">{project.stack.slice(0, 4).map((tag) => <li key={tag}>{tag}</li>)}</ul>
-        <Link className="text-link" href={`/projects/${project.slug}`} aria-label={`Explore ${project.title} project`}> Explore Project <ArrowUpRight size={17} aria-hidden="true" /></Link>
+        <div className="project-card-links">
+          {project.liveUrl && <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer" aria-label={`Visit ${project.title} live site (opens in a new tab)`}>Live Site <ArrowUpRight size={17} aria-hidden="true" /></a>}
+          <Link className="text-link" href={`/projects/${project.slug}`} aria-label={`Explore ${project.title} project`}> Explore Project <ArrowUpRight size={17} aria-hidden="true" /></Link>
+        </div>
       </div>
     </article>
   );
