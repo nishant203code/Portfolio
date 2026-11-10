@@ -23,7 +23,7 @@ Migrated the institute website from WordPress to Next.js and built internal facu
 | Project | What I worked on |
 | --- | --- |
 | [PeerLink](https://peerlink-7ya7.onrender.com/) · [Source](https://github.com/nishant203code/PeerLink) | Live peer-to-peer video calls with WebRTC, WebSocket signaling, and authentication. |
-| [CodeTracker](https://github.com/nishant203code/CodeTracker) | A coding practice log with revision priorities, a dashboard, and browser-extension capture. |
+| [CodeTracker](https://code-tracker-bh1n.vercel.app/) · [Source](https://github.com/nishant203code/CodeTracker) | A coding practice log with revision priorities, a dashboard, and browser-extension capture. |
 | [TerraAlert](https://github.com/nishant203code/TeraAlert---Landslide-Detection-Early-Warning-System) | Geospatial landslide detection and hazard-aware route planning using satellite imagery. |
 | [Legal AI Assistant](https://github.com/nishant203code/Legal-AI-Assistant-Model-Serving-Deployment) | A Flutter interface for document questions and summaries, connected to model inference endpoints. |
 | [IT Support RAG](https://github.com/nishant203code/IT-Support-RAG) | Retrieval-based answers from support tickets, with source attribution. |

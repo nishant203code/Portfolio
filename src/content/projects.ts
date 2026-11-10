@@ -133,6 +133,7 @@ export const projects: Project[] = [
     role: "Full-stack product development",
     stack: ["React", "TypeScript", "TanStack Start", "Supabase", "PostgreSQL", "Chrome Extension"],
     repo: "https://github.com/nishant203code/CodeTracker",
+    liveUrl: "https://code-tracker-bh1n.vercel.app/",
     revision: "b81ce83e81a6b1c295db066820d844ea58ceaa49",
     screenshot: { src: "/projects/codetracker-dashboard.png", width: 1906, height: 905, alt: "CodeTracker dashboard showing a problem log, activity heatmap, and topic breakdown", caption: "CodeTracker dashboard" },
     gallery: { src: "/projects/codetracker-revise.png", width: 1895, height: 904, alt: "CodeTracker revision interface for selecting and reviewing practice problems", caption: "CodeTracker revision view" },
