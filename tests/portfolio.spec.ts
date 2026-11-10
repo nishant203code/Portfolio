@@ -69,7 +69,7 @@ test("touch navigation and case-study links work without hover", async ({ browse
   await page.goto("http://127.0.0.1:3000");
   await page.getByRole("button", { name: "Open navigation" }).tap();
   await page.getByRole("navigation").getByRole("link", { name: "Projects", exact: true }).tap();
-  await page.getByRole("link", { name: "Read PeerLink case study" }).tap();
+  await page.getByRole("link", { name: "Explore PeerLink project" }).tap();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("PeerLink");
   await context.close();
 });
