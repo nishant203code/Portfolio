@@ -27,7 +27,20 @@ Migrated the institute website from WordPress to Next.js and built internal facu
 | [TerraAlert](https://github.com/nishant203code/TeraAlert---Landslide-Detection-Early-Warning-System) | Geospatial landslide detection and hazard-aware route planning using satellite imagery. |
 | [Legal AI Assistant](https://github.com/nishant203code/Legal-AI-Assistant-Model-Serving-Deployment) | A Flutter interface for document questions and summaries, connected to model inference endpoints. |
 | [IT Support RAG](https://github.com/nishant203code/IT-Support-RAG) | Retrieval-based answers from support tickets, with source attribution. |
-| [AI Mock Interviewer](https://github.com/nishant203code/Automated-AI-Mock-Interviewer) | Role-specific practice interviews with question generation, recorded answers, and feedback history. |
+| [AI Mock Interviewer](https://automated-ai-mock-interviewer.vercel.app/) · [Source](https://github.com/nishant203code/Automated-AI-Mock-Interviewer) | Role-specific practice interviews with question generation, recorded answers, and feedback history. |
+| [Optimizing Pathfinding](https://github.com/nishant203code/OptimisingPathfinding-Dijisktra-AStar-main) | User-created map graphs, a Flask pathfinding endpoint, and route visualization. |
+| [Portfolio](https://nishantporwal.vercel.app/) · [Source](https://github.com/nishant203code/Portfolio) | Responsive project case studies, persistent themes, and accessible navigation built with Next.js. |
+| [Unity Aid](https://github.com/nishant203code/Unity_Aid) | A Flutter/Firebase community-support app with NGO discovery, donation cases, and shared updates. |
+
+## System Status
+
+The homepage checks the `liveUrl` entries in `src/content/projects.ts` through the same-origin Next.js `/api/status` route. It accepts no target URL or query parameters and does not follow redirects. Run with `npm run dev`, or `npm run build` and `npm run start`; static-only hosting cannot execute these checks.
+
+Checks measure server-to-site time until HTTP response headers, not browser latency or full application health. Successful responses taking at least 3 seconds are degraded but still count as successes. Other HTTP errors are failures; redirects, 401/403/429 responses, network errors, and 20-second timeouts are unavailable rather than evidence of an outage. A cold start may exceed the timeout.
+
+The client polls every 30 seconds while the page is visible, cancels on hide/unmount, and times out its own request after 25 seconds. The server shares concurrent checks and retains results for 25 seconds per running instance; this is best-effort request reduction, not a distributed rate limit. Serverless requests still consume hosting resources. No checks run on a schedule without visitors.
+
+The last 24 real observations form the history; cached timestamps are counted only once. The percentage includes all determinate checks since this page mounted, not just those 24, and excludes unknown results. It resets on reload or leaving the homepage. A failed monitoring request marks current status unavailable without inventing an upstream check. No historical uptime is claimed.
 
 ## Skills
 

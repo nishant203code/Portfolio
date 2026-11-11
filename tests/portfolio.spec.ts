@@ -2,6 +2,10 @@ import { expect, test } from "@playwright/test";
 import { projects } from "../src/content/projects";
 import { profile } from "../src/content/profile";
 
+test.beforeEach(async ({ page }) => {
+  await page.route("**/api/status", (route) => route.fulfill({ json: { checks: projects.filter(({ liveUrl }) => liveUrl).map(({ slug }) => ({ slug, status: "operational", latency: 100, checkedAt: "2026-11-11T12:00:00.000Z", detail: "HTTP 200" })) } }));
+});
+
 for (const theme of ["dark", "light"] as const) {
   for (const width of [320, 360, 768, 1440]) {
     test(`${theme} layout at ${width}px`, async ({ page }) => {
@@ -12,7 +16,7 @@ for (const theme of ["dark", "light"] as const) {
       await page.goto("/");
       await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
       await expect(page.getByRole("heading", { name: "Nishant Porwal", exact: true })).toBeVisible();
-      await expect(page.locator("main h2")).toHaveText(["Curious about how things work.", "Experience", "Project Works", "Research", /Let’s build something/]);
+      await expect(page.locator("main h2")).toHaveText(["Curious about how things work.", "Experience", "Project Works", "Research", "System Status", /Let’s build something/]);
       await expect(page.locator("#work .project-card h3")).toHaveText(projects.slice(0, 4).map((project) => project.title));
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
       if (width === 1440) {
@@ -38,7 +42,7 @@ test("theme preference survives reloads and route changes", async ({ page }) => 
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
-  await page.getByRole("link", { name: "All six projects" }).click();
+  await page.getByRole("link", { name: `All ${projects.length} projects` }).click();
   await expect(page).toHaveURL("/projects");
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await page.emulateMedia({ colorScheme: "dark" });
@@ -81,7 +85,15 @@ test("all routes, repository links, and resume are real destinations", async ({ 
   await expect(page.getByRole("navigation").getByRole("link", { name: /Resume/ }))
     .toHaveAttribute("href", profile.resumeUrl);
   await page.goto("/projects");
-  await expect(page.locator(".project-card")).toHaveCount(6);
+  await expect(page.locator(".project-card")).toHaveCount(9);
+  expect(new Set(projects.map(({ slug }) => slug)).size).toBe(9);
+  expect(new Set(projects.map(({ repo }) => repo)).size).toBe(9);
+  for (const project of projects) {
+    const card = page.locator(`.project-card.project-${project.slug}`);
+    const liveLink = card.getByRole("link", { name: /live site/ });
+    if (project.liveUrl) await expect(liveLink).toHaveAttribute("href", project.liveUrl);
+    else await expect(liveLink).toHaveCount(0);
+  }
   for (const project of projects) {
     await page.goto(`/projects/${project.slug}`);
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(project.title);

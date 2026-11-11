@@ -106,6 +106,7 @@ p + p { margin-top: 16px; }
 .screenshot-frame { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--inset); }
 .project-card .screenshot-frame { aspect-ratio: 1.86; display: flex; align-items: center; }
 .project-card .screenshot-frame img { width: 100%; }
+.project-card.project-unity-aid .screenshot-frame img { height: 100%; object-fit: contain; }
 figcaption { color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 10px; }
 .project-card-bottom { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; padding: 24px 28px 22px; margin-top: auto; }
 .project-card-bottom .text-link { white-space: nowrap; min-height: 28px; font-size: 13px; }
@@ -135,6 +136,37 @@ figcaption { color: var(--muted); font-size: 12px; line-height: 1.5; margin-top:
 .research-themes h4 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
 .research-themes p { font-size: 14px; }
 .contact-card { padding: 44px; }
+.status-intro { margin-bottom: 24px; max-width: 75ch; }
+.status-panel { overflow: hidden; }
+.status-summary { padding: 22px 28px; background: var(--inset); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.status-summary strong, .status-site > div { display: flex; align-items: center; gap: 12px; }
+.status-summary > span, .status-result, .status-percentage { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.status-dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 9px; background: var(--muted); }
+.status-list { list-style: none; padding: 0; margin: 0; }
+.status-row { display: grid; grid-template-columns: minmax(0, 1.6fr) 120px minmax(120px, 1fr) 65px; align-items: center; gap: 20px; padding: 22px 28px; border-top: 1px solid var(--border); }
+.status-site { min-width: 0; }
+.status-site h3 { font: 600 15px/1.5 var(--font-sans); letter-spacing: 0; }
+.status-site a { display: inline-block; color: var(--muted); font-size: 12px; overflow-wrap: anywhere; padding-block: 5px; }
+.status-site a:hover { color: var(--blue); text-decoration: underline; }
+.status-result { display: grid; gap: 3px; }
+.status-history { display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); align-items: center; gap: 3px; height: 24px; }
+.status-bar { height: 12px; border-radius: 3px; background: var(--border); }
+.status-bar.status-operational, .status-bar.status-degraded, .status-bar.status-down { height: 20px; }
+.system-status .status-operational { background: #22865a; }
+.system-status .status-degraded { background: #b77510; }
+.system-status .status-down { background: #ca4652; }
+.system-status .status-unavailable { background: var(--muted); }
+.status-percentage { text-align: right; }
+.status-note { border-top: 1px solid var(--border); padding: 18px 28px; font-size: 12px; }
+@media (max-width: 900px) {
+  .status-row { grid-template-columns: minmax(0, 1fr) 110px; gap: 12px 20px; }
+  .status-result { text-align: right; }
+}
+@media (max-width: 640px) {
+  .status-row { padding: 20px; grid-template-columns: minmax(0, 1fr) 90px; gap: 12px; }
+  .status-summary, .status-note { padding: 20px; }
+  .status-site h3 { font-size: 14px; }
+}
 .contact-card h2 { font-size: clamp(32px, 4vw, 48px); margin-block: 20px; }
 .contact-card > p:not(.eyebrow) { max-width: 55ch; }
 .contact-email { display: inline-flex; align-items: center; gap: 12px; margin-top: 26px; color: var(--blue); font-size: clamp(14px, 2.8vw, 23px); min-height: 44px; overflow-wrap: anywhere; }
