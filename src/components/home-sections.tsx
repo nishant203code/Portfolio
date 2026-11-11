@@ -58,7 +58,7 @@ export function ExperienceCards() {
 export function ProjectWorks() {
   return (
     <section id="work" aria-labelledby="work-heading">
-      <div className="section-heading"><h2 id="work-heading">Project Works</h2><Link href="/projects" className="text-link">All six projects <ArrowRight size={17} aria-hidden="true" /></Link></div>
+      <div className="section-heading"><h2 id="work-heading">Project Works</h2><Link href="/projects" className="text-link">All {projects.length} projects <ArrowRight size={17} aria-hidden="true" /></Link></div>
       <div className="project-grid">{projects.slice(0, 4).map((project) => <MotionWrapper key={project.slug} className={`project-cell project-${project.slug}`}><ProjectCard project={project} /></MotionWrapper>)}</div>
     </section>
   );
