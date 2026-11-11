@@ -67,10 +67,10 @@ test("mobile menu supports keyboard, escape, and anchor navigation", async ({ pa
   await expect(menu).toHaveAttribute("aria-expanded", "false");
 });
 
-test("touch navigation and case-study links work without hover", async ({ browser }) => {
-  const context = await browser.newContext({ viewport: { width: 360, height: 800 }, isMobile: true, hasTouch: true });
+test("touch navigation and case-study links work without hover", async ({ browser, baseURL }) => {
+  const context = await browser.newContext({ baseURL, viewport: { width: 360, height: 800 }, isMobile: true, hasTouch: true });
   const page = await context.newPage();
-  await page.goto("http://127.0.0.1:3000");
+  await page.goto("/");
   await page.getByRole("button", { name: "Open navigation" }).tap();
   await page.getByRole("navigation").getByRole("link", { name: "Projects", exact: true }).tap();
   await page.getByRole("link", { name: "Explore PeerLink project" }).tap();
